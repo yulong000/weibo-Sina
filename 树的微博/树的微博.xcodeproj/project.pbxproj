@@ -1,0 +1,830 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		007FD36A1C4A0407002FA67F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 007FD3691C4A0407002FA67F /* main.m */; };
+		007FD3731C4A0407002FA67F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007FD3711C4A0407002FA67F /* Main.storyboard */; };
+		007FD3751C4A0407002FA67F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007FD3741C4A0407002FA67F /* Assets.xcassets */; };
+		007FD3781C4A0407002FA67F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007FD3761C4A0407002FA67F /* LaunchScreen.storyboard */; };
+		007FD3831C4A0407002FA67F /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 007FD3821C4A0407002FA67F /* ____Tests.m */; };
+		007FD38E1C4A0407002FA67F /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 007FD38D1C4A0407002FA67F /* ____UITests.m */; };
+		007FD39F1C4A0487002FA67F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 007FD39E1C4A0487002FA67F /* AppDelegate.m */; };
+		007FD3A71C4A054B002FA67F /* YLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007FD3A61C4A054B002FA67F /* YLTabBarController.m */; };
+		007FD3C81C4A09EA002FA67F /* YLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007FD3C71C4A09EA002FA67F /* YLHomeViewController.m */; };
+		007FD3CB1C4A0A0F002FA67F /* YLMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007FD3CA1C4A0A0F002FA67F /* YLMessageViewController.m */; };
+		007FD3CE1C4A0A4A002FA67F /* YLDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007FD3CD1C4A0A4A002FA67F /* YLDiscoverViewController.m */; };
+		007FD3D11C4A0A64002FA67F /* YLMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007FD3D01C4A0A64002FA67F /* YLMeViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		007FD37F1C4A0407002FA67F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 007FD35D1C4A0407002FA67F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 007FD3641C4A0407002FA67F;
+			remoteInfo = "树的微博";
+		};
+		007FD38A1C4A0407002FA67F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 007FD35D1C4A0407002FA67F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 007FD3641C4A0407002FA67F;
+			remoteInfo = "树的微博";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		007FD3651C4A0407002FA67F /* 树的微博.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "树的微博.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		007FD3691C4A0407002FA67F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		007FD3721C4A0407002FA67F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		007FD3741C4A0407002FA67F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		007FD3771C4A0407002FA67F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		007FD3791C4A0407002FA67F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		007FD37E1C4A0407002FA67F /* 树的微博Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "树的微博Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		007FD3821C4A0407002FA67F /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
+		007FD3841C4A0407002FA67F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		007FD3891C4A0407002FA67F /* 树的微博UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "树的微博UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		007FD38D1C4A0407002FA67F /* ____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____UITests.m"; sourceTree = "<group>"; };
+		007FD38F1C4A0407002FA67F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		007FD39D1C4A0487002FA67F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		007FD39E1C4A0487002FA67F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		007FD3A51C4A054B002FA67F /* YLTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YLTabBarController.h; path = tabbar/controller/YLTabBarController.h; sourceTree = "<group>"; };
+		007FD3A61C4A054B002FA67F /* YLTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YLTabBarController.m; path = tabbar/controller/YLTabBarController.m; sourceTree = "<group>"; };
+		007FD3A81C4A060B002FA67F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		007FD3A91C4A062B002FA67F /* PublicHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicHeader.h; sourceTree = "<group>"; };
+		007FD3C61C4A09EA002FA67F /* YLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLHomeViewController.h; sourceTree = "<group>"; };
+		007FD3C71C4A09EA002FA67F /* YLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLHomeViewController.m; sourceTree = "<group>"; };
+		007FD3C91C4A0A0F002FA67F /* YLMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLMessageViewController.h; sourceTree = "<group>"; };
+		007FD3CA1C4A0A0F002FA67F /* YLMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLMessageViewController.m; sourceTree = "<group>"; };
+		007FD3CC1C4A0A4A002FA67F /* YLDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLDiscoverViewController.h; sourceTree = "<group>"; };
+		007FD3CD1C4A0A4A002FA67F /* YLDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLDiscoverViewController.m; sourceTree = "<group>"; };
+		007FD3CF1C4A0A64002FA67F /* YLMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLMeViewController.h; sourceTree = "<group>"; };
+		007FD3D01C4A0A64002FA67F /* YLMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLMeViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		007FD3621C4A0407002FA67F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		007FD37B1C4A0407002FA67F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		007FD3861C4A0407002FA67F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		007FD35C1C4A0407002FA67F = {
+			isa = PBXGroup;
+			children = (
+				007FD3671C4A0407002FA67F /* 树的微博 */,
+				007FD3811C4A0407002FA67F /* 树的微博Tests */,
+				007FD38C1C4A0407002FA67F /* 树的微博UITests */,
+				007FD3661C4A0407002FA67F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		007FD3661C4A0407002FA67F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				007FD3651C4A0407002FA67F /* 树的微博.app */,
+				007FD37E1C4A0407002FA67F /* 树的微博Tests.xctest */,
+				007FD3891C4A0407002FA67F /* 树的微博UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		007FD3671C4A0407002FA67F /* 树的微博 */ = {
+			isa = PBXGroup;
+			children = (
+				007FD39B1C4A0487002FA67F /* Classes */,
+				007FD3711C4A0407002FA67F /* Main.storyboard */,
+				007FD3741C4A0407002FA67F /* Assets.xcassets */,
+				007FD3761C4A0407002FA67F /* LaunchScreen.storyboard */,
+				007FD3791C4A0407002FA67F /* Info.plist */,
+				007FD3A01C4A04AF002FA67F /* ImageSource */,
+				007FD3681C4A0407002FA67F /* Supporting Files */,
+			);
+			path = "树的微博";
+			sourceTree = "<group>";
+		};
+		007FD3681C4A0407002FA67F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				007FD3691C4A0407002FA67F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		007FD3811C4A0407002FA67F /* 树的微博Tests */ = {
+			isa = PBXGroup;
+			children = (
+				007FD3821C4A0407002FA67F /* ____Tests.m */,
+				007FD3841C4A0407002FA67F /* Info.plist */,
+			);
+			path = "树的微博Tests";
+			sourceTree = "<group>";
+		};
+		007FD38C1C4A0407002FA67F /* 树的微博UITests */ = {
+			isa = PBXGroup;
+			children = (
+				007FD38D1C4A0407002FA67F /* ____UITests.m */,
+				007FD38F1C4A0407002FA67F /* Info.plist */,
+			);
+			path = "树的微博UITests";
+			sourceTree = "<group>";
+		};
+		007FD39B1C4A0487002FA67F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				007FD3D21C4A0AB4002FA67F /* libs */,
+				007FD39C1C4A0487002FA67F /* Other */,
+				007FD3A11C4A04C1002FA67F /* tabbar */,
+				007FD3B61C4A0991002FA67F /* home */,
+				007FD3BE1C4A0991002FA67F /* message */,
+				007FD3C21C4A0991002FA67F /* send */,
+				007FD3B21C4A0991002FA67F /* discover */,
+				007FD3BA1C4A0991002FA67F /* me */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		007FD39C1C4A0487002FA67F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				007FD39D1C4A0487002FA67F /* AppDelegate.h */,
+				007FD39E1C4A0487002FA67F /* AppDelegate.m */,
+				007FD3A91C4A062B002FA67F /* PublicHeader.h */,
+				007FD3A81C4A060B002FA67F /* PrefixHeader.pch */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		007FD3A01C4A04AF002FA67F /* ImageSource */ = {
+			isa = PBXGroup;
+			children = (
+				007FD3D81C4A0B1D002FA67F /* other */,
+				007FD3D71C4A0B12002FA67F /* me */,
+				007FD3D61C4A0B06002FA67F /* discover */,
+				007FD3D51C4A0AFD002FA67F /* message */,
+				007FD3D41C4A0AF5002FA67F /* home */,
+				007FD3D31C4A0AE8002FA67F /* tabbar */,
+			);
+			path = ImageSource;
+			sourceTree = "<group>";
+		};
+		007FD3A11C4A04C1002FA67F /* tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				007FD3A41C4A04F2002FA67F /* model */,
+				007FD3A31C4A04EB002FA67F /* view */,
+				007FD3A21C4A04DF002FA67F /* controller */,
+			);
+			name = tabbar;
+			sourceTree = "<group>";
+		};
+		007FD3A21C4A04DF002FA67F /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				007FD3A51C4A054B002FA67F /* YLTabBarController.h */,
+				007FD3A61C4A054B002FA67F /* YLTabBarController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		007FD3A31C4A04EB002FA67F /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		007FD3A41C4A04F2002FA67F /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		007FD3B21C4A0991002FA67F /* discover */ = {
+			isa = PBXGroup;
+			children = (
+				007FD3B31C4A0991002FA67F /* controller */,
+				007FD3B41C4A0991002FA67F /* model */,
+				007FD3B51C4A0991002FA67F /* view */,
+			);
+			path = discover;
+			sourceTree = "<group>";
+		};
+		007FD3B31C4A0991002FA67F /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				007FD3CC1C4A0A4A002FA67F /* YLDiscoverViewController.h */,
+				007FD3CD1C4A0A4A002FA67F /* YLDiscoverViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		007FD3B41C4A0991002FA67F /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		007FD3B51C4A0991002FA67F /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		007FD3B61C4A0991002FA67F /* home */ = {
+			isa = PBXGroup;
+			children = (
+				007FD3B71C4A0991002FA67F /* controller */,
+				007FD3B81C4A0991002FA67F /* model */,
+				007FD3B91C4A0991002FA67F /* view */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		007FD3B71C4A0991002FA67F /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				007FD3C61C4A09EA002FA67F /* YLHomeViewController.h */,
+				007FD3C71C4A09EA002FA67F /* YLHomeViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		007FD3B81C4A0991002FA67F /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		007FD3B91C4A0991002FA67F /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		007FD3BA1C4A0991002FA67F /* me */ = {
+			isa = PBXGroup;
+			children = (
+				007FD3BB1C4A0991002FA67F /* controller */,
+				007FD3BC1C4A0991002FA67F /* model */,
+				007FD3BD1C4A0991002FA67F /* view */,
+			);
+			path = me;
+			sourceTree = "<group>";
+		};
+		007FD3BB1C4A0991002FA67F /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				007FD3CF1C4A0A64002FA67F /* YLMeViewController.h */,
+				007FD3D01C4A0A64002FA67F /* YLMeViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		007FD3BC1C4A0991002FA67F /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		007FD3BD1C4A0991002FA67F /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		007FD3BE1C4A0991002FA67F /* message */ = {
+			isa = PBXGroup;
+			children = (
+				007FD3BF1C4A0991002FA67F /* controller */,
+				007FD3C01C4A0991002FA67F /* model */,
+				007FD3C11C4A0991002FA67F /* view */,
+			);
+			path = message;
+			sourceTree = "<group>";
+		};
+		007FD3BF1C4A0991002FA67F /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				007FD3C91C4A0A0F002FA67F /* YLMessageViewController.h */,
+				007FD3CA1C4A0A0F002FA67F /* YLMessageViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		007FD3C01C4A0991002FA67F /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		007FD3C11C4A0991002FA67F /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		007FD3C21C4A0991002FA67F /* send */ = {
+			isa = PBXGroup;
+			children = (
+				007FD3C31C4A0991002FA67F /* controller */,
+				007FD3C41C4A0991002FA67F /* model */,
+				007FD3C51C4A0991002FA67F /* view */,
+			);
+			path = send;
+			sourceTree = "<group>";
+		};
+		007FD3C31C4A0991002FA67F /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		007FD3C41C4A0991002FA67F /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		007FD3C51C4A0991002FA67F /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		007FD3D21C4A0AB4002FA67F /* libs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		007FD3D31C4A0AE8002FA67F /* tabbar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = tabbar;
+			sourceTree = "<group>";
+		};
+		007FD3D41C4A0AF5002FA67F /* home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = home;
+			sourceTree = "<group>";
+		};
+		007FD3D51C4A0AFD002FA67F /* message */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = message;
+			sourceTree = "<group>";
+		};
+		007FD3D61C4A0B06002FA67F /* discover */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = discover;
+			sourceTree = "<group>";
+		};
+		007FD3D71C4A0B12002FA67F /* me */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = me;
+			sourceTree = "<group>";
+		};
+		007FD3D81C4A0B1D002FA67F /* other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = other;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		007FD3641C4A0407002FA67F /* 树的微博 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 007FD3921C4A0407002FA67F /* Build configuration list for PBXNativeTarget "树的微博" */;
+			buildPhases = (
+				007FD3611C4A0407002FA67F /* Sources */,
+				007FD3621C4A0407002FA67F /* Frameworks */,
+				007FD3631C4A0407002FA67F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "树的微博";
+			productName = "树的微博";
+			productReference = 007FD3651C4A0407002FA67F /* 树的微博.app */;
+			productType = "com.apple.product-type.application";
+		};
+		007FD37D1C4A0407002FA67F /* 树的微博Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 007FD3951C4A0407002FA67F /* Build configuration list for PBXNativeTarget "树的微博Tests" */;
+			buildPhases = (
+				007FD37A1C4A0407002FA67F /* Sources */,
+				007FD37B1C4A0407002FA67F /* Frameworks */,
+				007FD37C1C4A0407002FA67F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				007FD3801C4A0407002FA67F /* PBXTargetDependency */,
+			);
+			name = "树的微博Tests";
+			productName = "树的微博Tests";
+			productReference = 007FD37E1C4A0407002FA67F /* 树的微博Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		007FD3881C4A0407002FA67F /* 树的微博UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 007FD3981C4A0407002FA67F /* Build configuration list for PBXNativeTarget "树的微博UITests" */;
+			buildPhases = (
+				007FD3851C4A0407002FA67F /* Sources */,
+				007FD3861C4A0407002FA67F /* Frameworks */,
+				007FD3871C4A0407002FA67F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				007FD38B1C4A0407002FA67F /* PBXTargetDependency */,
+			);
+			name = "树的微博UITests";
+			productName = "树的微博UITests";
+			productReference = 007FD3891C4A0407002FA67F /* 树的微博UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		007FD35D1C4A0407002FA67F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = WYL;
+				TargetAttributes = {
+					007FD3641C4A0407002FA67F = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 87LJF62PN6;
+					};
+					007FD37D1C4A0407002FA67F = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 87LJF62PN6;
+						TestTargetID = 007FD3641C4A0407002FA67F;
+					};
+					007FD3881C4A0407002FA67F = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 87LJF62PN6;
+						TestTargetID = 007FD3641C4A0407002FA67F;
+					};
+				};
+			};
+			buildConfigurationList = 007FD3601C4A0407002FA67F /* Build configuration list for PBXProject "树的微博" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 007FD35C1C4A0407002FA67F;
+			productRefGroup = 007FD3661C4A0407002FA67F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				007FD3641C4A0407002FA67F /* 树的微博 */,
+				007FD37D1C4A0407002FA67F /* 树的微博Tests */,
+				007FD3881C4A0407002FA67F /* 树的微博UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		007FD3631C4A0407002FA67F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				007FD3781C4A0407002FA67F /* LaunchScreen.storyboard in Resources */,
+				007FD3751C4A0407002FA67F /* Assets.xcassets in Resources */,
+				007FD3731C4A0407002FA67F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		007FD37C1C4A0407002FA67F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		007FD3871C4A0407002FA67F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		007FD3611C4A0407002FA67F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				007FD39F1C4A0487002FA67F /* AppDelegate.m in Sources */,
+				007FD3D11C4A0A64002FA67F /* YLMeViewController.m in Sources */,
+				007FD3A71C4A054B002FA67F /* YLTabBarController.m in Sources */,
+				007FD3CE1C4A0A4A002FA67F /* YLDiscoverViewController.m in Sources */,
+				007FD3CB1C4A0A0F002FA67F /* YLMessageViewController.m in Sources */,
+				007FD3C81C4A09EA002FA67F /* YLHomeViewController.m in Sources */,
+				007FD36A1C4A0407002FA67F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		007FD37A1C4A0407002FA67F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				007FD3831C4A0407002FA67F /* ____Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		007FD3851C4A0407002FA67F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				007FD38E1C4A0407002FA67F /* ____UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		007FD3801C4A0407002FA67F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 007FD3641C4A0407002FA67F /* 树的微博 */;
+			targetProxy = 007FD37F1C4A0407002FA67F /* PBXContainerItemProxy */;
+		};
+		007FD38B1C4A0407002FA67F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 007FD3641C4A0407002FA67F /* 树的微博 */;
+			targetProxy = 007FD38A1C4A0407002FA67F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		007FD3711C4A0407002FA67F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				007FD3721C4A0407002FA67F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		007FD3761C4A0407002FA67F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				007FD3771C4A0407002FA67F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		007FD3901C4A0407002FA67F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		007FD3911C4A0407002FA67F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		007FD3931C4A0407002FA67F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/树的微博/Classes/Other/PrefixHeader.pch";
+				INFOPLIST_FILE = "树的微博/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "--wyl.----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		007FD3941C4A0407002FA67F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/树的微博/Classes/Other/PrefixHeader.pch";
+				INFOPLIST_FILE = "树的微博/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "--wyl.----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		007FD3961C4A0407002FA67F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "树的微博Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "--wyl.----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/树的微博.app/树的微博";
+			};
+			name = Debug;
+		};
+		007FD3971C4A0407002FA67F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "树的微博Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "--wyl.----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/树的微博.app/树的微博";
+			};
+			name = Release;
+		};
+		007FD3991C4A0407002FA67F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "树的微博UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "--wyl.----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "树的微博";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		007FD39A1C4A0407002FA67F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "树的微博UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "--wyl.----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "树的微博";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		007FD3601C4A0407002FA67F /* Build configuration list for PBXProject "树的微博" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				007FD3901C4A0407002FA67F /* Debug */,
+				007FD3911C4A0407002FA67F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		007FD3921C4A0407002FA67F /* Build configuration list for PBXNativeTarget "树的微博" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				007FD3931C4A0407002FA67F /* Debug */,
+				007FD3941C4A0407002FA67F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		007FD3951C4A0407002FA67F /* Build configuration list for PBXNativeTarget "树的微博Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				007FD3961C4A0407002FA67F /* Debug */,
+				007FD3971C4A0407002FA67F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		007FD3981C4A0407002FA67F /* Build configuration list for PBXNativeTarget "树的微博UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				007FD3991C4A0407002FA67F /* Debug */,
+				007FD39A1C4A0407002FA67F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 007FD35D1C4A0407002FA67F /* Project object */;
+}
