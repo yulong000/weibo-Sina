@@ -8,10 +8,17 @@
 
 #import "AppDelegate.h"
 #import "YLTabBarController.h"
+#import "YLOAuthViewController.h"
 
 @interface AppDelegate ()
 
 @end
+
+/**
+ *  全局的 account
+ */
+YLAccount *Account = nil;
+
 
 @implementation AppDelegate
 
@@ -19,9 +26,32 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    YLTabBarController *tabbar = [[YLTabBarController alloc] init];
-    tabbar.view.backgroundColor = WhiteColor;
-    self.window.rootViewController = tabbar;
+    
+    YLAccount *account = [[YLUserCacheTool shareUserCacheTool] getLocalAccountInfo];
+    if(account)
+    {
+        // 获取到本地帐号
+        Account = account;
+        YLTabBarController *tabbar = [[YLTabBarController alloc] init];
+        tabbar.view.backgroundColor = WhiteColor;
+        self.window.rootViewController = tabbar;
+    }
+    else
+    {
+        // 未获取到，请求
+        YLOAuthViewController *auth = [[YLOAuthViewController alloc] init];
+        auth.view.backgroundColor = WhiteColor;
+        __weak typeof(self) weakSelf = self;
+        auth.getAccountSuccess = ^(YLAccount *account){
+            
+            // 请求成功，跳转
+            YLTabBarController *tabbar = [[YLTabBarController alloc] init];
+            tabbar.view.backgroundColor = WhiteColor;
+            weakSelf.window.rootViewController = tabbar;
+            Account = account;
+        };
+        self.window.rootViewController = auth;
+    }
     [self.window makeKeyAndVisible];
     return YES;
 }

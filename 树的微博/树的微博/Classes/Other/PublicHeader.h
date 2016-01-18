@@ -9,33 +9,38 @@
 #ifndef PublicHeader_h
 #define PublicHeader_h
 
+#pragma mark - API
 
-#pragma mark - 颜色
+#define AppKey      @"4216503575"
+#define AppSecret   @"7a3cea23d82f1eacec8b532e356d691c"
 
-// r, g, b ,a 颜色
-#define RGBA(r, g, b, a)  [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:a]
-// 纯白色
-#define WhiteColor     [UIColor whiteColor]
-// 纯黑色
-#define BlackColor     [UIColor blackColor]
-// 透明色
-#define ClearColor     [UIColor clearColor]
-// 灰色
-#define GrayColor      [UIColor grayColor]
-// 深灰色
-#define DarkGrayColor  [UIColor darkGrayColor]   // 0.333 white
-// 亮灰色
-#define LightGrayColor [UIColor lightGrayColor]  // 0.667 white
-// 红色
-#define RedColor       [UIColor redColor]
-// 绿色
-#define GreenColor     [UIColor greenColor]
-// 橙色
-#define OrangeColor    [UIColor orangeColor]
-// 黄色
-#define YellowColor    [UIColor yellowColor]
-// 蓝色
-#define BlueColor      [UIColor blueColor]
 
+// 应用的回调地址
+#define AppCallbackUrl @"http://www.baidu.com"
+
+// oauth2.0授权
+#define AuthorizeAPI [@"https://open.weibo.cn/oauth2/authorize" stringByAppendingString:[NSString stringWithFormat:@"?client_id=%@&redirect_uri=%@", AppKey, AppCallbackUrl]]
+
+// 获取 token
+#define GetUserAccessTokenAPI @"https://api.weibo.com/oauth2/access_token?"
+
+// 获取个人信息
+#define GetUserInfoAPI @"https://api.weibo.com/2/users/show.json"
+
+// 获取微博
+#define GetUserStatusesAPI @"https://api.weibo.com/2/statuses/home_timeline.json"
+
+
+
+#pragma mark - status
+
+#define kStatusTimeFont             SystemFont(12)    // 时间的字体
+#define kStatusSourceFont           SystemFont(12)    // 微博来源的字体
+#define kStatusContentFont          SystemFont(16)    // 微博正文的字体
+#define kStatusNameFont             SystemFont(15)    // 昵称的字体
+#define kRetweetStatusNameFont      SystemFont(14)    // 被转发微博作者的昵称字体
+#define kRetweetStatusContentFont   SystemFont(13)    // 被转发微博正文的字体
+#define kStatusTableBorder          0                 // 表格的边框宽度
+#define kStatusCellSubViewsGap      10                 // cell子控件间的间距
 
 #endif /* PublicHeader_h */
