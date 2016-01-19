@@ -23,6 +23,8 @@
 
 @end
 
+YLUser *User = nil;
+
 @implementation YLHomeViewController
 #pragma mark -
 
@@ -121,8 +123,8 @@
     __weak typeof(self) weakSelf = self;
     [[YLNetworkTool shareNetworkTool]getWithURL:GetUserInfoAPI params:params success:^(id json) {
         
-        YLUser *user = [YLUser userWithDict:json];
-        weakSelf.titleView.title = user.name;
+        User = [YLUser userWithDict:json];
+        weakSelf.titleView.title = User.name;
         json = nil;
         
     } failure:^(NSError *error) {

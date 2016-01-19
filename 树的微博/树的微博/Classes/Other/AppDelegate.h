@@ -14,4 +14,7 @@
 
 @end
 
+/**
+ *  当前帐号信息
+ */
 extern YLAccount *Account;

@@ -12,6 +12,7 @@
 #import "YLMessageViewController.h"
 #import "YLDiscoverViewController.h"
 #import "YLMeViewController.h"
+#import "YLComposeViewController.h"
 
 
 #import "YLTabBar.h"
@@ -90,7 +91,9 @@
 #pragma mark 点击了发微博
 - (void)tabBarDidClickComposeButton:(YLTabBar *)tabBar
 {
-    
+    YLComposeViewController *composeVc = [[YLComposeViewController alloc] init];
+    composeVc.view.backgroundColor = WhiteColor;
+    [self presentViewController:composeVc animated:YES completion:nil];
 }
 
 @end

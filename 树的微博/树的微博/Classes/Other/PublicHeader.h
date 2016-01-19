@@ -30,6 +30,9 @@
 // 获取微博
 #define GetUserStatusesAPI @"https://api.weibo.com/2/statuses/home_timeline.json"
 
+// 发送纯文本微博
+#define ComposeStatusOnlyTextAPI @"https://api.weibo.com/2/statuses/update.json"
+
 
 
 #pragma mark - status
@@ -42,5 +45,30 @@
 #define kRetweetStatusContentFont   SystemFont(13)    // 被转发微博正文的字体
 #define kStatusTableBorder          0                 // 表格的边框宽度
 #define kStatusCellSubViewsGap      10                 // cell子控件间的间距
+
+
+#pragma mark - enum
+
+// 发微博时工具条的私密策略
+typedef NS_ENUM(NSUInteger, ToolbarSecretType) {
+    
+    ToolbarSecretType_public,           // 公开
+    ToolbarSecretType_myself,           // 仅自己可见
+    ToolbarSecretType_friendCircel,     // 好友圈
+    
+};
+
+// 工具条的按钮
+typedef NS_ENUM(NSUInteger, KeyboardToolbarButtonType) {
+    
+    KeyboardToolbarButtonTypePicture, // 图片
+    KeyboardToolbarButtonTypeMention, // @ 提及
+    KeyboardToolbarButtonTypeTrend,   // # 趋势
+    KeyboardToolbarButtonTypeEmotion, // 表情
+    KeyboardToolbarButtonTypeMore,    // 更多
+    KeyboardToolbarButtonTypeHeadline,// 头条文章
+    KeyboardToolbarButtonTypeStock,   //股票
+    KeyboardToolbarButtonTypeProduct  // 商品
+};
 
 #endif /* PublicHeader_h */

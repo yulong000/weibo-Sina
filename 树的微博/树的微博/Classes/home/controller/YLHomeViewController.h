@@ -11,3 +11,8 @@
 @interface YLHomeViewController : UITableViewController
 
 @end
+
+/**
+ *  当前用户
+ */
+extern YLUser *User;
