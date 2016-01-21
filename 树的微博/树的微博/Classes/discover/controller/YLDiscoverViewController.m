@@ -7,49 +7,105 @@
 //
 
 #import "YLDiscoverViewController.h"
+#import "YLSearchBar.h"
+#import "YLLoopScrollView.h"
+#import "YLHotTopicView.h"
+#import "YLDiscoverTableViewCell.h"
+#import "YLDiscoverTableViewCellModel.h"
 
 @interface YLDiscoverViewController ()
+
+@property (nonatomic, strong) NSMutableArray <NSMutableArray *> *dataSource;
 
 @end
 
 @implementation YLDiscoverViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+- (NSMutableArray <NSMutableArray *> *)dataSource
+{
+    if(_dataSource == nil)
+    {
+        _dataSource = [NSMutableArray array];
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"DiscoverTableViewCell" ofType:@"plist"];
+        NSArray *arr = [NSArray arrayWithContentsOfFile:filePath];
+        for(int i = 0; i < arr.count; i++)
+        {
+            NSMutableArray *subArr = arr[i];
+            NSMutableArray *tmpArr = [NSMutableArray array];
+            [subArr enumerateObjectsUsingBlock:^(NSDictionary *dict, NSUInteger idx, BOOL * _Nonnull stop) {
+                
+                YLDiscoverTableViewCellModel *model = [YLDiscoverTableViewCellModel modelWithDict:dict];
+                [tmpArr addObject:model];
+            }];
+            [_dataSource addObject:tmpArr];
+        }
+    }
+    return _dataSource;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    YLSearchBar *searchBar = [[YLSearchBar alloc] initWithFrame:self.navigationController.navigationBar.bounds];
+    [self.navigationController.navigationBar addSubview:searchBar];
+    
+    [self setupHeaderView];
+}
+#pragma mark 设置 tableview 的头视图
+- (void)setupHeaderView
+{
+    UIView *headerView = [[UIView alloc] init];
+    CGFloat margin = 10;
+    CGFloat loopScrollViewH = 100;
+    CGFloat hotTopicViewH = 80;
+    
+    NSArray *adUrls = @[@"http://ww3.sinaimg.cn/large/8ffeeb91jw1f06442gzn2j20hs05k3z8.jpg",
+                        @"http://pica.nipic.com/2008-06-13/2008613185412196_2.jpg",
+                        @"http://www.shanlink.com/uploadfile/wangyi/20140411/6597268778261229182.jpg"];
+    YLLoopScrollView *loopScrollView = [[YLLoopScrollView alloc] initWithImageUrlsSource:adUrls placeholderImage:[UIImage imageNamed:@"weibo_helper_group_feed_picture"]];
+    loopScrollView.frame = CGRectMake(0, margin, self.view.width, loopScrollViewH);
+    loopScrollView.pageControlCurrentPageColor = OrangeColor;
+    [loopScrollView startTimer];
+    [headerView addSubview:loopScrollView];
+    
+    YLHotTopicView *hotTopicView = [[YLHotTopicView alloc] init];
+    hotTopicView.frame = CGRectMake(0, CGRectGetMaxY(loopScrollView.frame) + margin, self.view.width, hotTopicViewH);
+    hotTopicView.titles = @[@"#车内自拍#", @"#朕不许你#", @"#太子妃升职记#", @"热门话题"];
+    [headerView addSubview:hotTopicView];
+    
+    headerView.frame = CGRectMake(0, 0, self.view.width, CGRectGetMaxY(hotTopicView.frame));
+    headerView.backgroundColor = RGBA(240, 240, 240, 1);
+    self.tableView.tableHeaderView = headerView;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.rowHeight = 50;
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.dataSource.count;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dataSource[section].count;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    YLDiscoverTableViewCell *cell = [YLDiscoverTableViewCell cellWithTableView:tableView];
+    cell.model = self.dataSource[indexPath.section][indexPath.row];
     return cell;
 }
-*/
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 10;
+}
+
 
 /*
 // Override to support conditional editing of the table view.

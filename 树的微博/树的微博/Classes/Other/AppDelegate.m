@@ -25,12 +25,20 @@ YLAccount *Account = nil;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    // 注册通知
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert categories:nil];
+    [application registerUserNotificationSettings:settings];
+    
+    // 设置所有 tableViewCell 的选中时的颜色
+    UIView *bgView = [[UIView alloc] init];
+    bgView.backgroundColor = RGBA(240, 240, 240, 1);
+    [[UITableViewCell appearance] setSelectedBackgroundView:bgView];
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     YLAccount *account = [[YLUserCacheTool shareUserCacheTool] getLocalAccountInfo];
     if(account)
     {
-        // 获取到本地帐号
         Account = account;
         YLTabBarController *tabbar = [[YLTabBarController alloc] init];
         tabbar.view.backgroundColor = WhiteColor;

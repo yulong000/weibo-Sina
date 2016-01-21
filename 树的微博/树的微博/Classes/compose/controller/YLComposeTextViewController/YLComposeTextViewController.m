@@ -55,7 +55,7 @@
 #pragma mark 设置导航栏
 - (void)setNavBar
 {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(close)];
     self.navigationItem.leftBarButtonItem.tintColor = GrayColor;
     
     UIButton *sendBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 25)];
@@ -85,7 +85,7 @@
 }
 
 #pragma mark 取消
-- (void)cancel
+- (void)close
 {
     [self.textView resignFirstResponder];
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
@@ -116,7 +116,7 @@
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = Account.access_token;
-    params[@"status"] = [status stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    params[@"status"] = status;
     params[@"visible"] = @(self.toolbar.secretType);
     
     [[YLNetworkTool shareNetworkTool] postWithURL:ComposeStatusOnlyTextAPI params:params success:^(id json) {
@@ -125,7 +125,7 @@
         if(json[@"idstr"])
         {
             [MBProgressHUD showSuccess:@"发送成功！"];
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [self close];
         }
         else
         {
@@ -148,6 +148,14 @@
     
         weakSelf.navigationItem.rightBarButtonItem.enabled = text.length;
     };
+    textView.endDragBlock = ^{
+    
+        [weakSelf.textView resignFirstResponder];
+        if(weakSelf.toolbar.selectedButton)
+        {
+            [weakSelf.toolbar clickSelectedButton];
+        }
+    };
     [self.view addSubview:textView];
     self.textView = textView;
     [textView becomeFirstResponder];
@@ -156,7 +164,15 @@
 #pragma mark - 键盘通知
 - (void)keyboardNotification:(NSNotification *)noti
 {
-    if(self.toolbar.currentSelectedButton != nil && [noti.name isEqualToString:UIKeyboardWillHideNotification]) return;
+    if(self.toolbar.selectedButton != nil)
+    {
+        if([noti.name isEqualToString:UIKeyboardWillHideNotification])  return;
+        if([noti.name isEqualToString:UIKeyboardWillShowNotification])
+        {
+            [self.toolbar clickSelectedButton];
+            return;
+        }
+    }
     
     NSDictionary *userInfo = noti.userInfo;
     CGRect keyboardEndFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
@@ -193,7 +209,7 @@
             break;
         case KeyboardToolbarButtonTypeEmotion:
         {
-            if(self.toolbar.currentSelectedButton.tag == KeyboardToolbarButtonTypeEmotion)
+            if(self.toolbar.selectedButton.tag == KeyboardToolbarButtonTypeEmotion)
             {
                 [self.textView resignFirstResponder];
                 [UIView animateWithDuration:0.3 animations:^{
@@ -201,7 +217,7 @@
                     self.toolbar.frame = CGRectMake(0, kScreenHeight - kKeyboardToolbarHight, kScreenWidth, kKeyboardToolbarHight);
                 }];
             }
-            else if (self.toolbar.currentSelectedButton.tag != KeyboardToolbarButtonTypeMore)
+            else if (self.toolbar.selectedButton.tag != KeyboardToolbarButtonTypeMore)
             {
                 [self.textView becomeFirstResponder];
             }
@@ -209,7 +225,7 @@
             break;
         case KeyboardToolbarButtonTypeMore:
         {
-            if(self.toolbar.currentSelectedButton.tag == KeyboardToolbarButtonTypeMore)
+            if(self.toolbar.selectedButton.tag == KeyboardToolbarButtonTypeMore)
             {
                 [self.textView resignFirstResponder];
                 [UIView animateWithDuration:0.3 animations:^{
@@ -217,7 +233,7 @@
                     self.toolbar.frame = CGRectMake(0, kScreenHeight - kKeyboardToolbarHight, kScreenWidth, kKeyboardToolbarHight);
                 }];
             }
-            else if(self.toolbar.currentSelectedButton.tag != KeyboardToolbarButtonTypeEmotion)
+            else if(self.toolbar.selectedButton.tag != KeyboardToolbarButtonTypeEmotion)
             {
                 [self.textView becomeFirstResponder];
             }

@@ -10,6 +10,7 @@
 
 @interface YLTabBarItem : UIButton
 
+@property (nonatomic, strong) UITabBarItem *tabBarItem;
 
 - (instancetype)initWithItem:(UITabBarItem *)item;
 + (instancetype)tabBarItemWithItem:(UITabBarItem *)item;

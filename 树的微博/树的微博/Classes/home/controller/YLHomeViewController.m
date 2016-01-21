@@ -61,6 +61,11 @@ YLUser *User = nil;
 {
     [self getMoreStatuses];
 }
+#pragma mark 开始刷新
+- (void)beginRefresh
+{
+    [self.tableView.mj_header beginRefreshing];
+}
 
 #pragma mark - 设置导航栏
 - (void)setNavBar
@@ -175,7 +180,15 @@ YLUser *User = nil;
         
         NSMutableDictionary * params = [[NSMutableDictionary alloc] init];
         params[@"access_token"] = Account.access_token;
-        params[@"count"] = @10;
+        int count = self.tabBarItem.badgeValue.intValue;
+        if( count > 0)
+        {
+            params[@"count"] = @(count > 100 ? 100 : count);
+        }
+        else
+        {
+            params[@"count"] = @10;
+        }
         if(self.statusFrames.count)
         {
             YLStatusFrame *statusFrame = self.statusFrames.firstObject;
@@ -197,6 +210,7 @@ YLUser *User = nil;
             {
                 [self showMessageWithNewStatusesCount:(unsigned)statuses.count];
             }
+            self.tabBarItem.badgeValue = @"0";
             
         } failure:^(NSError *error) {
             

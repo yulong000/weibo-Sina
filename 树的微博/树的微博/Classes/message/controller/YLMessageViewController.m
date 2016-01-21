@@ -7,49 +7,124 @@
 //
 
 #import "YLMessageViewController.h"
+#import "YLMessageTableViewCellModel.h"
+#import "YLMessageTableViewCell.h"
+#import "YLAtMeTableViewController.h"
 
 @interface YLMessageViewController ()
+
+@property (nonatomic, strong) NSMutableArray *dataSource;
 
 @end
 
 @implementation YLMessageViewController
 
+- (NSMutableArray *)dataSource
+{
+    if(_dataSource == nil)
+    {
+        _dataSource = [NSMutableArray array];
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"MessageTableViewCell" ofType:@"plist"];
+        NSArray *arr = [NSArray arrayWithContentsOfFile:filePath];
+        [arr enumerateObjectsUsingBlock:^(NSDictionary *dict, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            YLMessageTableViewCellModel *model = [YLMessageTableViewCellModel modelWithDict:dict];
+            [_dataSource addObject:model];
+        }];
+    }
+    return _dataSource;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self setNavBar];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.rowHeight = 65;
+    self.tableView.tableFooterView = [[UIView alloc] init];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedUnreadMessageCountNotification:) name:kGetUnreadMessageCountNotification object:nil];
+    
+}
+#pragma mark 设置导航栏
+- (void)setNavBar
+{
+    UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 44)];
+    leftBtn.titleLabel.font = SystemFont(16);
+    [leftBtn setTitle:@"发现群" forState:UIControlStateNormal];
+    [leftBtn setTitleColor:GrayColor forState:UIControlStateNormal];
+    [leftBtn setTitleColor:OrangeColor forState:UIControlStateHighlighted];
+    [leftBtn addTarget:self action:@selector(discoverGroup) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
+    
+    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 44)];
+    [rightBtn setImage:[UIImage imageNamed:@"navigationbar_icon_newchat"] forState:UIControlStateNormal];
+    [rightBtn setImage:[UIImage imageNamed:@"navigationbar_icon_newchat_highlight"] forState:UIControlStateHighlighted];
+    [rightBtn addTarget:self action:@selector(newChat) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+    
+    self.navigationController.navigationBar.tintColor = GrayColor;
+}
+#pragma mark 发现群
+- (void)discoverGroup
+{
+    
+}
+#pragma mark 开启新的聊天
+- (void)newChat
+{
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark 接收到未读消息的通知
+- (void)receivedUnreadMessageCountNotification:(NSNotification *)noti
+{
+    YLUnreadMessageCountModel *model = noti.userInfo[kGetUnreadMessageCountNotification];
+    // @我的
+    YLMessageTableViewCellModel *atMeModel = self.dataSource.firstObject;
+    atMeModel.unreadCount = @(model.mention_status);
+    
+    // 新评论数
+    YLMessageTableViewCellModel *cmtModel = self.dataSource[1];
+    cmtModel.unreadCount = @(model.cmt);
+    
+    // 新私信数
+    YLMessageTableViewCellModel *dmModel = self.dataSource[4];
+    dmModel.unreadCount = @(model.dm);
+    
+    if(model.messageCount)
+    {
+        [self.tableView reloadData];
+    }
 }
+
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dataSource.count;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    YLMessageTableViewCell *cell = [YLMessageTableViewCell cellWithTableView:tableView];
+    cell.model = self.dataSource[indexPath.row];
     return cell;
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.row == 0)
+    {
+        // @我的
+        YLAtMeTableViewController *atMeVc = [[YLAtMeTableViewController alloc] init];
+        atMeVc.view.backgroundColor = WhiteColor;
+        YLMessageTableViewCellModel *model = self.dataSource[indexPath.row];
+        atMeVc.unreadCount = model.unreadCount;
+        [self.navigationController pushViewController:atMeVc animated:YES];
+    }
+}
+
 
 /*
 // Override to support conditional editing of the table view.

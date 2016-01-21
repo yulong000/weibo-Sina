@@ -10,6 +10,11 @@
 
 @interface YLHomeViewController : UITableViewController
 
+/**
+ *  获取新微博
+ */
+- (void)beginRefresh;
+
 @end
 
 /**

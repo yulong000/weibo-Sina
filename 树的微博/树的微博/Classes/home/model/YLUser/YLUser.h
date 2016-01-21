@@ -15,7 +15,7 @@
  */
 @property (nonatomic, copy) NSString *idstr;
 /**
- *  用户的昵称
+ *  用户的友好显示昵称
  */
 @property (nonatomic, copy) NSString *name;
 /**
@@ -30,6 +30,26 @@
  *  会员类型（ > 2时是会员）
  */
 @property (nonatomic, assign) int mbtype;
+
+/**
+ *  粉丝数
+ */
+@property (nonatomic,assign) int followers_count;
+
+/**
+ *  关注数
+ */
+@property (nonatomic, assign) int friends_count;
+
+/**
+ *  微博数
+ */
+@property (nonatomic, assign) int statuses_count;
+
+/**
+ *  个人描述
+ */
+@property (nonatomic, copy) NSString *descriptionStr;
 
 - (instancetype)initWithDict:(NSDictionary *)dict;
 + (instancetype)userWithDict:(NSDictionary *)dict;

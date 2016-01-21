@@ -14,10 +14,10 @@
 
 @property (nonatomic, strong) UILabel *placeholderLabel;
 
-
 @end
 
 @implementation YLComposeTextView
+@synthesize inputView = _inputView;
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -53,6 +53,21 @@
     self.placeholderLabel.text = _placeholder;
 }
 
+- (void)setInputView:(UIInputView *)inputView
+{
+    self.textView.inputView = inputView;
+}
+
+- (UIView *)inputView
+{
+    return self.textView.inputView;
+}
+
+- (void)reloadInputViews
+{
+    [self.textView reloadInputViews];
+}
+
 - (NSString *)text
 {
     return self.textView.text;
@@ -67,10 +82,13 @@
 {
     return [self.textView resignFirstResponder];
 }
-#pragma mark 滑动消失
+#pragma mark - 停止拖拽，开始减速
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    [self.textView resignFirstResponder];
+    if(self.endDragBlock)
+    {
+        self.endDragBlock();
+    }
 }
 
 #pragma mark - UITextView 代理

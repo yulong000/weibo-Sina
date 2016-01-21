@@ -24,6 +24,9 @@
 // 获取 token
 #define GetUserAccessTokenAPI @"https://api.weibo.com/oauth2/access_token?"
 
+// 获取 token 的信息
+#define GetAccessTokenInfoAPI @"https://api.weibo.com/oauth2/get_token_info"
+
 // 获取个人信息
 #define GetUserInfoAPI @"https://api.weibo.com/2/users/show.json"
 
@@ -32,6 +35,13 @@
 
 // 发送纯文本微博
 #define ComposeStatusOnlyTextAPI @"https://api.weibo.com/2/statuses/update.json"
+
+// 获取消息未读数
+#define GetUnreadMessageCountAPI @"https://rm.api.weibo.com/2/remind/unread_count.json"
+
+// 获取@我的微博
+#define GetStatusesMentionMeAPI @"https://api.weibo.com/2/statuses/mentions.json"
+
 
 
 
@@ -70,5 +80,14 @@ typedef NS_ENUM(NSUInteger, KeyboardToolbarButtonType) {
     KeyboardToolbarButtonTypeStock,   //股票
     KeyboardToolbarButtonTypeProduct  // 商品
 };
+
+
+#pragma mark - 通知
+#define kGetUnreadMessageCountNotification @"GetUnreadMessageCountNotification"             // 未读消息通知
+
+
+#pragma mark - 其他
+
+#define kGetUnreadMessageCountInterval 5           // 获取未读消息个数的时间间隔
 
 #endif /* PublicHeader_h */

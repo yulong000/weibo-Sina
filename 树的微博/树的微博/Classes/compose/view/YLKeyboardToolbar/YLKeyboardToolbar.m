@@ -202,16 +202,16 @@
 {
     if(btn.tag == KeyboardToolbarButtonTypeEmotion || btn.tag == KeyboardToolbarButtonTypeMore)
     {
-        if(self.currentSelectedButton == btn)
+        if(self.selectedButton == btn)
         {
-            self.currentSelectedButton.selected = NO;
-            self.currentSelectedButton = nil;
+            self.selectedButton.selected = NO;
+            self.selectedButton = nil;
         }
         else
         {
-            self.currentSelectedButton.selected = NO;
+            self.selectedButton.selected = NO;
             btn.selected = YES;
-            self.currentSelectedButton = btn;
+            self.selectedButton = btn;
         }
     }
     if([self.delegate respondsToSelector:@selector(keyboardToolbar:didClickButton:)])
@@ -242,6 +242,11 @@
 - (NSString *)location
 {
     return self.localView.local;
+}
+
+- (void)clickSelectedButton
+{
+    [self operateButtonClick:self.selectedButton];
 }
 
 @end

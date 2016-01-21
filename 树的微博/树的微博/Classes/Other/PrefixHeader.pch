@@ -33,6 +33,9 @@
 #import "YLStatus.h"
 #import "YLStatusFrame.h"
 #import "YLHomeViewController.h"
+#import "YLUnreadMessageCountModel.h"
+#import "YLStatusTableViewCell.h"
+#import "YLBadgeView.h"
 
 
 #ifdef DEBUG
@@ -73,8 +76,9 @@
 #define SystemFont(size)        [UIFont systemFontOfSize:size]     // 正常
 #define BoldSystemFont(size)    [UIFont boldSystemFontOfSize:size] // 粗体
 
-#define StringValueFromInt(int) [NSString stringWithFormat:@"%d", int]
-#define StringValueFromFloat(float) [NSString stringWithFormat:@"%f", float]
+#define StringValueFromInt(int)         [NSString stringWithFormat:@"%d", int]
+#define StringVauleFromInteger(integer) [NSString stringWithFormat:@"%ld", integer]
+#define StringValueFromFloat(float)     [NSString stringWithFormat:@"%f", float]
 
 #define kScreenWidth      [UIScreen mainScreen].bounds.size.width       // 屏幕宽度
 #define kScreenHeight     [UIScreen mainScreen].bounds.size.height      // 屏幕高度

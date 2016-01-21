@@ -46,6 +46,12 @@
 /**
  *  表情和更多 当前选中的那个， 都未选中时为 nil
  */
-@property (nonatomic, weak) UIButton *currentSelectedButton;
+@property (nonatomic, weak) UIButton *selectedButton;
+
+/**
+ *  点击当前选中的按钮（表情/更多）
+ */
+- (void)clickSelectedButton;
+
 
 @end

@@ -59,7 +59,7 @@
 
 + (instancetype)cellWithTableView:(UITableView *)tableView
 {
-    static NSString *statusTableViewCell = @"StatusTableViewCell";
+    static NSString *statusTableViewCell = @"HomeTableViewCell";
     YLStatusTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:statusTableViewCell];
     if(cell == nil)
     {

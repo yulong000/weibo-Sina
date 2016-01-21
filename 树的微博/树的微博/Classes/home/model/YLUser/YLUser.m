@@ -24,4 +24,8 @@
     return [[super alloc] initWithDict:dict];
 }
 
+- (NSDictionary *)replacedKeyFromPropertyName
+{
+    return @{@"description" : @"descriptionStr"};
+}
 @end
